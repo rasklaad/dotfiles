@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set mouse=a
+set surround
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,9 +28,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 "
-let NERDTreeShowHidden=1
-set number
-
-" https://github.com/cocopon/iceberg.vim.git
+autocmd vimenter * NERDTree
 colorscheme iceberg
-
+:nnoremap <Space> i_<Esc>r
