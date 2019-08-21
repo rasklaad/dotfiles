@@ -2,9 +2,16 @@ set nocompatible              " be iMproved, required
 set mouse=a
 let mapleader=","
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 Plug 'stephpy/vim-yaml'
 Plug 'scrooloose/nerdtree'
+Plug 'arcticicestudio/nord-vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -41,8 +48,7 @@ augroup LSP
   autocmd FileType python call SetLSPShortcuts()
 augroup END
 let NERDTreeShowHidden=1
+nnoremap <leader>nt :NERDTreeToggle<CR>
 set number
 
-" https://github.com/cocopon/iceberg.vim.git
 colorscheme iceberg
-

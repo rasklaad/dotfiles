@@ -1,41 +1,29 @@
 [global_config]
-  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_hide_sizetext = True
-  title_transmit_bg_color = "#000000"
+  title_font = Hack 9
+  title_inactive_bg_color = "#4C566A"
+  title_inactive_fg_color = "#D8DEE9"
+  title_receive_bg_color = "#8FBCBB"
+  title_receive_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_transmit_fg_color = "#2E3440"
+  title_use_system_font = False
 [keybindings]
-  scaled_zoom = <Primary><Shift>space
 [layouts]
   [[default]]
-    [[[child0]]]
-      fullscreen = False
-      last_active_term = 81290ed2-8e53-44cc-a2c9-abfa25bbcdc5
-      last_active_window = True
-      maximised = False
-      order = 0
-      parent = ""
-      position = 904:0
-      size = 900, 600
-      title = user@localhost: ~
-      type = Window
-    [[[terminal1]]]
-      order = 0
-      parent = child0
-      profile = Violet Dark
+    [[[child1]]]
+      parent = window0
       type = Terminal
-      uuid = 81290ed2-8e53-44cc-a2c9-abfa25bbcdc5
+    [[[window0]]]
+      parent = ""
+      type = Window
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#f4f4f4"
-    cursor_color = "#3f3f3f"
+    cursor_color = "#aaaaaa"
     font = Hack 10
-    foreground_color = "#3e3e3e"
-    palette = "#3e3e3e:#970b16:#07962a:#f8eec7:#003e8a:#e94691:#89d1ec:#ffffff:#666666:#de0000:#87d5a2:#f1d007:#2e6cba:#ffa29f:#1cfafe:#ffffff"
     use_system_font = False
-  [[Violet Dark]]
-    background_color = "#1c1d1f"
-    cursor_color = "#708284"
-    font = Hack 10
-    foreground_color = "#708284"
-    palette = "#56595c:#c94c22:#85981c:#b4881d:#2e8bce:#d13a82:#32a198:#c9c6bd:#45484b:#bd3613:#738a04:#a57705:#2176c7:#c61c6f:#259286:#c9c6bd"
-    use_system_font = False
+  [[nord]]
+    background_color = "#2E3440"
+    cursor_color = "#D8DEE9"
+    foreground_color = "#D8DEE9"
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
