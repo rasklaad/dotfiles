@@ -11,6 +11,8 @@ endif
 call plug#begin()
 Plug 'stephpy/vim-yaml'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -52,3 +54,4 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 set number
 
 colorscheme iceberg
+let g:airline_theme='bubblegum'
