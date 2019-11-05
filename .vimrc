@@ -20,12 +20,11 @@ Plug 'stephpy/vim-yaml'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sgur/vim-editorconfig'
 call plug#end()
 let b:delimitMate_quotes = "\" '"
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
@@ -148,6 +147,12 @@ highlight CocHighlightText guifg=#EBCB8B
 highlight CocErrorSign guifg=#bf616a
 highlight CocErrorHighLight guifg=#bf616a
 highlight CocErrorLine guifg=#bf616a
-let java_highlight_functions="style"
 let java_highlight_java_lang_ids=1
 let g:airline_theme='bubblegum'
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

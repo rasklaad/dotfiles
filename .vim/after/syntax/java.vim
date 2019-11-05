@@ -52,7 +52,13 @@ function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
 endfunction
 "
 " Java
-call s:hi("JavaFuncDef", s:nord15_gui, "", s:nord15_term, "", "", "")
-call s:hi("javaLambdaDef", s:nord15_gui, "", s:nord15_term, "", "", "")
-call s:hi("javaVarArg", s:nord3_gui_bright, "", "", "", "", "")
+call s:hi("javaFuncWithoutArgs", s:nord15_gui, "", s:nord15_term, "", "", "")
+syn match javaFuncWithoutArgs "\v(\s|\.|\()\zs([a-z]+[A-Z]+)*[a-z]+(\(&)"
+call s:hi("javaClass", s:nord8_gui, "", s:nord8_term, "", "", "")
+
+syn match javaClass "\((\|\s\|\<\)\zs\([A-Z0-9][a-z0-9]\+\)\+\ze\(\s\|\>\|\.\|(\)"
+syn cluster javaTop add=javaClass,javaFuncWithoutArgs
+"call s:hi("javaLambdaDef", s:nord15_gui, "", s:nord15_term, "", "", "")
+"call s:hi("javaVarArg", s:nord3_gui_bright, "", "", "", "", "")
+
 
