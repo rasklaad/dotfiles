@@ -23,8 +23,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sgur/vim-editorconfig'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 let b:delimitMate_quotes = "\" '"
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
