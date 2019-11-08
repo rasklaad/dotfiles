@@ -138,8 +138,17 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" File browser
 let NERDTreeShowHidden=1
 nnoremap <leader>nt :NERDTreeToggle<CR>
+
+" Code search
+nmap <leader>f :FZF<CR>
+nmap <leader>ag :Ag<CR>
+
+
+nmap <leader>b :Buffers<CR>
+
 
 set termguicolors
 colorscheme nord
