@@ -25,6 +25,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'sgur/vim-editorconfig'
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-signify'
 call plug#end()
 let b:delimitMate_quotes = "\" '"
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
