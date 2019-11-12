@@ -2,32 +2,11 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set mouse=a
 set surround
+let mapleader=","
+nnoremap <leader>jd :action QuickJavaDoc<CR>
+nnoremap <leader>nw :action NextSplitter<CR>
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+nnoremap <C-J> m`o<Esc>``
+nnoremap <C-K> m`O<Esc>``
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'stephpy/vim-yaml'
-Plugin 'scrooloose/nerdtree'
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-"
-autocmd vimenter * NERDTree
 colorscheme iceberg
-:nnoremap <Space> i_<Esc>r
