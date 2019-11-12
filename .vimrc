@@ -143,6 +143,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let NERDTreeShowHidden=1
 nnoremap <leader>nt :NERDTreeToggle<CR>
 
+" custom editing shortcuts
+nnoremap <C-J> m`o<Esc>``
+nnoremap <C-K> m`O<Esc>``
+
 " Code search
 nmap <leader>f :FZF<CR>
 nmap <leader>ag :Ag<CR>
@@ -159,10 +163,10 @@ highlight CocErrorHighLight guifg=#bf616a
 highlight CocErrorLine guifg=#bf616a
 let java_highlight_java_lang_ids=1
 let g:airline_theme='bubblegum'
-nmap <leader>z :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+"nmap <leader>z :call <SID>SynStack()<CR>
+"function! <SID>SynStack()
+"  if !exists("*synstack")
+"    return
+"  endif
+"  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+"endfunc
