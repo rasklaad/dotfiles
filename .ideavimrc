@@ -5,8 +5,6 @@ set surround
 let mapleader=","
 nnoremap <leader>jd :action QuickJavaDoc<CR>
 nnoremap <leader>nw :action NextSplitter<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
 
-nnoremap <C-J> m`o<Esc>``
-nnoremap <C-K> m`O<Esc>``
-
-colorscheme iceberg
