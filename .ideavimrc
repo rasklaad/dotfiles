@@ -7,5 +7,6 @@ nnoremap <leader>jd :action QuickJavaDoc<CR>
 nnoremap <leader>nw :action NextSplitter<CR>
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gb :action Back<CR>
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 
