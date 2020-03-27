@@ -1,10 +1,10 @@
 <scheme name="Nord" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2020-03-22T13:21:21</property>
+    <property name="created">2020-03-27T09:10:09</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2019.3.2.0.0</property>
-    <property name="modified">2020-03-22T13:21:34</property>
+    <property name="modified">2020-03-27T09:10:21</property>
     <property name="originalScheme">_@user_Nord</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.0" />
@@ -45,6 +45,7 @@
     <option name="RIGHT_MARGIN_COLOR" value="4c566a" />
     <option name="SELECTED_TEARLINE_COLOR" value="434c5e" />
     <option name="SELECTION_BACKGROUND" value="506e6d" />
+    <option name="SELECTION_FOREGROUND" value="323846" />
     <option name="SOFT_WRAP_SIGN_COLOR" value="4c566a" />
     <option name="TEARLINE_COLOR" value="4c566a" />
     <option name="VCS_ANNOTATIONS_COLOR_1" value="3b4252" />
