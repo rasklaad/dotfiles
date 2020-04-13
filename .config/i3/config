@@ -24,7 +24,7 @@ font pango:hack 10
 # xss-lock grabs a logind suspend inhibit lock and will use xsecurelock to lock the
 # screen before suspend. Use xset s activate to lock screen.
 exec --no-startup-id xset s 120 4
-exec --no-startup-id xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- env XSECURELOCK_SAVER=saver_blank  XSECURELOCK_PAM_SERVICE=gdm-password XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_PASSWORD_PROMPT=time xsecurelock
+exec --no-startup-id xss-lock -n /usr/local/libexec/xsecurelock/dimmer -l -- env XSECURELOCK_SAVER=saver_blank  XSECURELOCK_PAM_SERVICE=lxdm XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_PASSWORD_PROMPT=time xsecurelock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
