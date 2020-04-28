@@ -19,7 +19,7 @@ order += "tztime local"
 
 
 memory {
-        format = "  %used/%available"
+        format = "  used: %used/available: %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
