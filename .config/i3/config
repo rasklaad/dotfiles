@@ -208,6 +208,8 @@ bar {
     }
 }
 
+client.focused          #81a1c1 #5e81ac #ffffff #2e9ef4   #5e81ac
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
