@@ -1,0 +1,37 @@
+theme = "bad-wolf"
+icons = "awesome"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization}%"
+
+[[block]]
+block = "memory"
+format_mem = "{Mum}MB/{MTm}MB({Mup}%)"
+format_swap = "{SUm}MB/{STm}MB({SUp}%)"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 5
+format = "min: {min}°, max: {max}°, avg: {average}°"
+
+[[block]]
+block = "xrandr"
+icons = true
+interval = 2
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %d.%m.%Y %T"
+
