@@ -4,7 +4,7 @@ sudo cp /root/xorg.conf.new /etc/X11/xorg.conf
 sudo systemctl set-default graphical
 sudo sed -i 's,# session=/usr/bin/startlxde,session=/usr/bin/i3,' /etc/lxdm/lxdm.conf
 sudo systemctl enable -f lxdm
-sudo dnf install -y zsh curl git pipenv keepassxc neovim fd-find the_silver_searcher fzf pam-devel libX11-devel libXcomposite-devel libXext-devel libXfixes-devel libXft-devel libXmu-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs fontawesome-fonts lm_sensors
+sudo dnf install -y zsh curl git pipenv keepassxc neovim fd-find the_silver_searcher fzf pam-devel libX11-devel libXcomposite-devel libXext-devel libXfixes-devel libXft-devel libXmu-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs fontawesome-fonts lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel
 sudo dnf group install -y 'Development Tools'
 
 # copy my dotfiles
@@ -31,17 +31,20 @@ cd $HOME/.local/xsecurelock
 make
 sudo make install
 
-# kitty terminal install
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-mkdir ~/.local/share/applications
-mkdir ~/.local/bin
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications
-ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-sed -i "s/Icon\=kitty/Icon\=\/home\/$USER\/.local\/kitty.app\/share\/icons\/hicolor\/256x256\/apps\/kitty.png/g" ~/.local/share/applications/kitty.desktop
+# rust install 
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# alacritty install
+cd $HOME/.local
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+$HOME/.cargo/bin/cargo build --release
+ln -s $HOME/.local/alacritty/target/release/alacritty $HOME/.local/bin/alacritty
+
 
 # ranger update desktop file
-sudo sed -i "s,Terminal=true,$Terminal=true," /usr/share/applications/ranger.desktop
-sudo sed -i "s,Exec=ranger,Exec=kitty ranger," /usr/share/applications/ranger.desktop
+sudo sed -i "s,Terminal=true,#Terminal=true," /usr/share/applications/ranger.desktop
+sudo sed -i "s,Exec=ranger,Exec=alacritty -e ranger," /usr/share/applications/ranger.desktop
 
 # remove rhgb 
 sudo sed -i "s,rhgb,," /etc/default/grub
