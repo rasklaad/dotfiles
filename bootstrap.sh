@@ -57,5 +57,7 @@ export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 git clone https://github.com/MichaelAquilina/zsh-auto-notify.git $ZSH_CUSTOM/plugins/auto-notify
 
-# optional - install nm-applet and NetworkManager-wifi if using laptop
+# optional (for laptop):
+# sudo dnf install network-manager-applet NetworkManager-wifi tlp
+# sudo systemctl enable tlp
 # remove 'ServerLayout" Screen iptions from /etc/X11/xorg.conf, if there is problem with mouse traverse edges
