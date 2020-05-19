@@ -47,7 +47,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec /home/rasklaad/.local/bin/kitty
+bindsym $mod+t exec alacritty
 
 # start a terminal
 bindsym $mod+F12 exec loginctl lock-session
