@@ -220,4 +220,4 @@ client.focused          #81a1c1 #5e81ac #ffffff #2e9ef4   #5e81ac
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
+#exec i3-config-wizard
