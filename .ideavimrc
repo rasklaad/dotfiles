@@ -10,3 +10,5 @@ nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gb :action Back<CR>
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 
+nnoremap <leader>nh :action VcsShowNextChangeMarker<CR>
+nnoremap <leader>ph :action VcsShowPrevChangeMarker<CR>
