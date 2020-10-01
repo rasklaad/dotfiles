@@ -3,6 +3,7 @@ set number
 set hidden
 let mapleader=","
 set updatetime=100
+set re=0 " yats.vim requirement
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -26,6 +27,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'HerringtonDarkholme/yats.vim'
 call plug#end()
 let b:delimitMate_quotes = "\" '"
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
@@ -47,6 +49,7 @@ nnoremap <silent> <leader>td   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> <leader>gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <leader>fr    <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " Autocompletion
 autocmd BufEnter * lua require'completion'.on_attach()
