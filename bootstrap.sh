@@ -36,6 +36,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # alacritty install
 cd $HOME/.local
+mkdir -p $HOME/.local/bin
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 $HOME/.cargo/bin/cargo build --release
