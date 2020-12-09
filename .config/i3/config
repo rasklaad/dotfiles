@@ -195,7 +195,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status-rs $HOME/.config/i3/status.toml
 	position top
-	font pango: DejaVu Sans Mono, FontAwesome 12
+	font pango: DejaVu Sans, FontAwesome 12
 
 	colors {
         separator #666666
