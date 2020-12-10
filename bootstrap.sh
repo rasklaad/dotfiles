@@ -61,4 +61,7 @@ git clone https://github.com/MichaelAquilina/zsh-auto-notify.git $ZSH_CUSTOM/plu
 # optional (for laptop):
 # sudo dnf install network-manager-applet NetworkManager-wifi tlp
 # sudo systemctl enable tlp
+# sudo modprobe btusb
+# sudo systemctl enable bluetooth
+# sudo dnf install -y blueman bluez-tools python3-cairo
 # remove 'ServerLayout" Screen iptions from /etc/X11/xorg.conf, if there is problem with mouse traverse edges
