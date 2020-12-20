@@ -4,7 +4,7 @@ sudo cp /root/xorg.conf.new /etc/X11/xorg.conf
 sudo systemctl set-default graphical
 sudo sed -i 's,# session=/usr/bin/startlxde,session=/usr/bin/i3,' /etc/lxdm/lxdm.conf
 sudo systemctl enable -f lxdm
-sudo dnf install -y zsh curl git pipenv keepassxc neovim fd-find the_silver_searcher fzf pam-devel libX11-devel libXcomposite-devel libXext-devel libXfixes-devel libXft-devel libXmu-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol
+sudo dnf install -y zsh curl git pipenv keepassxc neovim fd-find the_silver_searcher fzf pam-devel libX11-devel libXcomposite-devel libXext-devel libXfixes-devel libXft-devel libXmu-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol xbindkeys alacritty playerctl
 sudo dnf group install -y 'Development Tools'
 
 # copy my dotfiles
@@ -33,15 +33,6 @@ sudo make install
 
 # rust install 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
-
-# alacritty install
-cd $HOME/.local
-mkdir -p $HOME/.local/bin
-git clone https://github.com/alacritty/alacritty.git
-cd alacritty
-$HOME/.cargo/bin/cargo build --release
-ln -s $HOME/.local/alacritty/target/release/alacritty $HOME/.local/bin/alacritty
-
 
 # ranger update desktop file
 sudo sed -i "s,Terminal=true,#Terminal=true," /usr/share/applications/ranger.desktop
