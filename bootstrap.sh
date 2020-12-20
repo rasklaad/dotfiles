@@ -1,4 +1,4 @@
-sudo dnf install -y i3 fontawesome-fonts xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xorg-x11-apps mesa-dri-drivers lxdm
+sudo dnf install -y i3 fontawesome-fonts xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xorg-x11-apps mesa-dri-drivers lxdm xkeyboard-config
 sudo X -configure
 sudo cp /root/xorg.conf.new /etc/X11/xorg.conf
 sudo systemctl set-default graphical
