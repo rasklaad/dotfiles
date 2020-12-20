@@ -23,6 +23,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'arcticicestudio/nord-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'sgur/vim-editorconfig'
+Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
@@ -34,7 +35,7 @@ let delimitMate_matchpairs = "(:),[:],{:},<:>"
 
 " Built it LSP
 :lua <<EOF
-  require'nvim_lsp'.tsserver.setup{cmd= { "typescript-language-server", "--stdio" }, filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" } }
+  require'lspconfig'.tsserver.setup{cmd= { "typescript-language-server", "--stdio" }, filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" } }
 EOF
 
 nnoremap <silent> <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
