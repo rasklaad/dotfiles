@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set mouse=a
 set surround
+set relativenumber
 let mapleader=","
 nnoremap <leader>jd :action QuickJavaDoc<CR>
 nnoremap <leader>nw :action NextSplitter<CR>
