@@ -1,15 +1,8 @@
-sudo dnf install -y i3 fontawesome-fonts xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-xauth xorg-x11-apps mesa-dri-drivers lxdm xkeyboard-config
-sudo X -configure
-sudo cp /root/xorg.conf.new /etc/X11/xorg.conf
-sudo systemctl set-default graphical
-sudo sed -i 's,# session=/usr/bin/startlxde,session=/usr/bin/i3,' /etc/lxdm/lxdm.conf
-sudo systemctl enable -f lxdm
-sudo dnf install -y zsh curl git pipenv keepassxc neovim fd-find the_silver_searcher fzf pam-devel libX11-devel libXcomposite-devel libXext-devel libXfixes-devel libXft-devel libXmu-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol xbindkeys alacritty playerctl pulseaudio inotify-tools pamu2fcfg pam-u2f
+set +xe
+sudo dnf install zsh curl git keepassxc neovim fd-find the_silver_searcher fzf pam-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake xss-lock rofi firefox rsync nodejs feh ranger tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol xbindkeys alacritty playerctl inotify-tools pamu2fcfg pam-u2f xsecurelock
 sudo dnf group install -y 'Development Tools'
 
 # copy my dotfiles
-mkdir ~/projects
-git clone https://github.com/rasklaad/dotfiles.git ~/projects/dotfiles
 cd ~/projects/dotfiles
 rsync -r --exclude=.git --exclude=README.MD . ~/
 
@@ -22,14 +15,6 @@ sudo curl https://raw.githubusercontent.com/source-foundry/Hack/master/config/fo
 sudo fc-cache -f -v
 rm -f Hack-v3.003-ttf.zip
 rm -rf ttf
-
-# xsecurelock install
-git clone https://github.com/google/xsecurelock.git ~/.local/xsecurelock
-cd $HOME/.local/xsecurelock
-./autogen.sh
-./configure --with-pam-service-name=authproto_pam
-make
-sudo make install
 
 # rust install 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -50,8 +35,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/the
 git clone https://github.com/MichaelAquilina/zsh-auto-notify.git $ZSH_CUSTOM/plugins/auto-notify
 
 # optional (for laptop):
-# sudo dnf install network-manager-applet NetworkManager-wifi tlp
-# sudo systemctl enable tlp
+sudo dnf install tlp
+sudo systemctl enable tlp
 # sudo modprobe btusb
 # sudo systemctl enable bluetooth
 # sudo dnf install -y blueman bluez-tools python3-cairo
