@@ -12,6 +12,7 @@ nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gt :action GotoTypeDeclaration<CR>
 nnoremap <leader>gb :action Back<CR>
 nnoremap <leader>tb :action ToggleLineBreakpoint<CR>
+nnoremap <leader>bl :action Annotate<CR>
 nnoremap <C-w>L :action MoveEditorToOppositeTabGroup<CR>
 
 nnoremap <leader>nh :action VcsShowNextChangeMarker<CR>
