@@ -4,4 +4,5 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .class --exclude .git'
 export KEYTIMEOUT=1
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
