@@ -1,0 +1,8 @@
+#!/bin/sh
+
+Selection=true
+Exec=/usr/bin/sway
+Environment=wayland
+LoginShell=/usr/bin/zsh --login
+
+exec dbus-launch $@
