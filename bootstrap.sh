@@ -1,5 +1,5 @@
 set +xe
-sudo dnf install zsh curl git keepassxc neovim fd-find the_silver_searcher fzf pam-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake wofi firefox rsync nodejs feh tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol xbindkeys alacritty playerctl inotify-tools pamu2fcfg pam-u2f sway swaylock
+sudo dnf install --skip-unavailable zsh curl git keepassxc neovim fd-find the_silver_searcher fzf pam-devel libXrandr-devel pkgconf-pkg-config xorg-x11-proto-devel autoconf automake wofi firefox rsync nodejs feh tar unzip nmap net-tools pciutils maim xclip i3status-rs lm_sensors cmake freetype-devel fontconfig-devel libxcb-devel ncdu sshfs sqlite dejavu-serif-fonts dejavu-sans-mono-fonts pavucontrol xbindkeys alacritty playerctl inotify-tools pamu2fcfg pam-u2f sway swaylock
 sudo dnf group install -y 'Development Tools'
 
 # copy my dotfiles
