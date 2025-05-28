@@ -12,13 +12,12 @@ vim.g.tabstop = 4
 vim.g.shiftwidth = 4
 vim.g.relativenumber = true
 vim.g.rnu = true
+vim.opt.shortmess:append("I")
 
 -- Plugins using vim-plug
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug('Raimondi/delimitMate')
-
-Plug('sgur/vim-editorconfig')
 
 -- theme
 Plug('vim-airline/vim-airline')
@@ -48,6 +47,9 @@ vim.call('plug#end')
 vim.g.delimitMate_quotes = "\" '"
 vim.g.delimitMate_matchpairs = "(:),[:],{:},<:>"
 
+-- conjure
+vim.g["conjure#filetypes"] = { "clojure", "fennel", "janet", "racket", "lisp" }
+
 
 -- LSP and autocompletion setup
 vim.o.completeopt = 'menu,menuone,noinsert'
@@ -56,6 +58,7 @@ cmp.setup({
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -91,14 +94,16 @@ local attach = function(client, bufnr)
 
   -- Key mappings
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
   vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
   vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
+  vim.keymap.set('n', '<leader>er', vim.diagnostic.setloclist, opts)
+  vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '<leader>fr', function()
         vim.lsp.buf.format { async = true }
       end, opts)
@@ -107,8 +112,19 @@ end
 require'lspconfig'.clojure_lsp.setup{on_attach = attach, cmd= { "clojure-lsp"  }, filetypes = { "clojure", "edn" }, capabilities = caps}
 require'lspconfig'.gopls.setup({on_attach = attach, settings = { gopls = { analyses = { unusedparams = true, }, staticcheck = true, gofumpt = true, }, }, })
 require'lspconfig'.tailwindcss.setup{on_attach = attach}
+require'lspconfig'.pylsp.setup({on_attach = attach, 
+  settings = {
+    pylsp = {
+      plugins = {
+        jedi_completion = { enabled = true },
+        jedi_references = { enabled = true },
+        jedi_signature_help = { enabled = true },
+      }
+    }
+  }
+})
 
-require'nvim-treesitter.configs'.setup{highlight = {enable = true}, ensure_installed = {"java", "clojure", "javascript", "go", "html"}, rainbow = {enable = true, extended_mode = true}}
+require'nvim-treesitter.configs'.setup{highlight = {enable = true}, ensure_installed = {"java", "clojure", "javascript", "go", "html", "python"}, rainbow = {enable = true, extended_mode = true}}
 
 -- File browser
 vim.g.NERDTreeShowHidden=1
