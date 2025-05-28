@@ -109,7 +109,9 @@ export NVM_DIR="$HOME/.config/nvm"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias fh="history | cut -c 8- | fzf | xclip -in -selection clipboard"
+fh() {
+  history | cut -c 8- | fzf | wl-copy
+}
 alias :e="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
