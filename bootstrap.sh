@@ -28,8 +28,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/the
 git clone https://github.com/MichaelAquilina/zsh-auto-notify.git $ZSH_CUSTOM/plugins/auto-notify
 
 # optional (for laptop):
-sudo dnf install tlp
-sudo systemctl enable tlp
+#sudo dnf install tlp
+#sudo systemctl enable tlp
 # sudo modprobe btusb
 # sudo systemctl enable bluetooth
 # sudo dnf install -y blueman bluez-tools python3-cairo
